@@ -1,63 +1,41 @@
 import turtle
 
-turtle.setup(800,800)
-
-logo = turtle.Turtle()
-logo.pencolor("blue")
-logo.speed(10)
-
-logo.up()
-logo.setpos(-375,375)
-
-for i in range(4):
-    logo.down()
-    logo.dot(5,"blue")
-    logo.forward(50)
-    logo.right(90)
-
-logo.up()
-logo.setpos(logo.pos() + (125,-50))
-logo.right(180)
-
-logo.down()
-logo.dot(5,"blue")
-logo.forward(50)
-logo.dot(5,"blue")
-logo.right(120)
-logo.forward(55)
-logo.dot(5,"blue")
-logo.right(120)
-logo.forward(35)
-logo.dot(5,"blue")
-logo.right(120)
-logo.forward(25)
-logo.dot(5,"blue")
-
-logo.up()
-logo.setpos(logo.pos() + (55,-15))
-logo.right(180)
-
-logo.down()
-logo.dot(5,"blue")
-logo.right(270)
-logo.forward(50)
-logo.dot(5,"blue")
-logo.right(110)
-logo.forward(35)
-logo.dot(5,"blue")
-logo.right(130)
-logo.forward(35)
-logo.dot(5,"blue")
-logo.right(230)
-logo.forward(35)
-logo.dot(5,"blue")
-logo.right(145)
-logo.forward(35)
-logo.dot(5,"blue")
-
-logo.up()
-logo.setpos(logo.pos() + (95,0))
-logo.right(180)
+# Typographic Properties as Global Variables
+capHeight = 50
 
 
-turtle.exitonclick()
+def setup():
+    turtle.up()
+    turtle.setup(800,800)
+    turtle.pencolor("blue")
+    turtle.speed(5)
+    turtle.setpos(-375,375)
+
+
+def kerning():
+    turtle.up()
+    turtle.setpos(turtle.pos() + (125,-50))
+    turtle.right(180)
+
+def square():
+    global capHeight
+    for i in range(4):
+        turtle.down()
+        turtle.dot(5,"blue")
+        turtle.forward(capHeight)
+        turtle.right(90)
+    kerning()
+
+def character():
+    kerning()
+    for i in range(4):
+        turtle.down()
+        logo.dot(5,"blue")
+        logo.forward()
+
+def main():
+    setup()
+    square()
+    turtle.exitonclick()
+
+main()
