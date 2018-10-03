@@ -90,7 +90,7 @@ def prologue():
 
     clear_console()
 
-    doomHeader("The  Forging  of  the  Great  Rings")
+    doomHeader("The  forging  of  the  Great  Rings")
     doomHeader("Three  were  given  to  the  Elves..")
     doomHeader("Seven  to  the  Dwarf-Lords..")
     doomHeader("Nine  to  the  race  of  Men..")
@@ -150,7 +150,7 @@ def prologue():
     doomHeader("Isildur,  eldest  son  of  Elendil...")
     doomHeader("defeated  Sauron")
     doomHeader("The  ring  passed  to  Isildur...")
-    doomHeader("..who  had  the  once  chance...")
+    doomHeader("..who  had  the  one  chance...")
     doomHeader("..to  destroy  the  ring  forever!")
 
     clear_console()
