@@ -1,10 +1,26 @@
-var img;
+var img = [];
+var xPos = yPos = 0;
+var imgHeight = imgWidth = 250;
+var imgPadding = 10;
+
 function preload() {
-    img = loadImage('./images/image-5.jpg');
+    for (var i=1; i<=5; i++)
+    {
+        img[i] = loadImage("./images/image-"+i+".jpg");
+    }
 }
 function setup() {
     createCanvas(windowWidth,windowHeight);
-    image(img, 10,10,500,500);
+    noLoop();
+}
+
+function draw() {
+    for (var i=1; i<=5; i++)
+    {
+        image(img[i], xPos, yPos, imgWidth, imgHeight);
+        xPos = xPos + imgWidth + imgPadding;
+    }
+
 }
 
 function windowResized() {
