@@ -34,12 +34,12 @@ function setup() {
     myMap.overlay(canvas);
     tripsCoordinates = myMap.geoJSON(data, "LineString");
     var config = {
-    apiKey: "AIzaSyBP0RtMfE_K7nLZZ_ZwGSNLtS_Uf4Tr5YQ",
-    authDomain: "loc-tracker-1542814218314.firebaseapp.com",
-    databaseURL: "https://loc-tracker-1542814218314.firebaseio.com",
-    projectId: "loc-tracker-1542814218314",
-    storageBucket: "loc-tracker-1542814218314.appspot.com",
-    messagingSenderId: "409337534307"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: ""
 };
 firebase.initializeApp(config);
 
