@@ -17,32 +17,42 @@ let taxiPosition;
 let visitedRoutes = []; // A new array to hold all visited positions
 
 const options = {
-  lat: 40.73447,
-  lng: -74.00232,
-  zoom: 13,
-  style: 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
+    lat: 40.73447,
+    lng: -74.00232,
+    zoom: 13,
+    style: 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'
 }
 const mappa = new Mappa('Leaflet');
 
 function preload() {
-  data = loadJSON('./data/taxiday1.geojson');
+    data = loadJSON('./data/taxiday1.geojson');
 }
 
 function setup() {
-  canvas = createCanvas(800, 700);
-  myMap = mappa.tileMap(options);
-  myMap.overlay(canvas);
-  tripsCoordinates = myMap.geoJSON(data, "LineString");
+    canvas = createCanvas(800, 700);
+    myMap = mappa.tileMap(options);
+    myMap.overlay(canvas);
+    tripsCoordinates = myMap.geoJSON(data, "LineString");
+    var config = {
+    apiKey: "AIzaSyBP0RtMfE_K7nLZZ_ZwGSNLtS_Uf4Tr5YQ",
+    authDomain: "loc-tracker-1542814218314.firebaseapp.com",
+    databaseURL: "https://loc-tracker-1542814218314.firebaseio.com",
+    projectId: "loc-tracker-1542814218314",
+    storageBucket: "loc-tracker-1542814218314.appspot.com",
+    messagingSenderId: "409337534307"
+};
+firebase.initializeApp(config);
 
-  tripsCoordinates.forEach(function (trip) {
-    trip.forEach(function (coordinate) {
+
+    tripsCoordinates.forEach(function (trip) {
+        trip.forEach(function (coordinate) {
         allCoordinates.push(coordinate)
-      })
-  });
+    })
+});
   //myMap.onChange(drawPoints);
 
   // Every time the map is zoomed or moved update the route
-  myMap.onChange(drawRoute);
+    myMap.onChange(drawRoute);
 }
 
 function draw(){
